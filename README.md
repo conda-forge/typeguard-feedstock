@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About typeguard
 ===============
 
@@ -19,8 +15,14 @@ This library provides runtime type checking for functions defined with argument 
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/typeguard-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/typeguard-feedstock)
+
+<table><tr>
+    <td>All platforms:</td>
+    <td>
+      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
