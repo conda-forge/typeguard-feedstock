@@ -1,5 +1,5 @@
 {% set name = "typeguard" %}
-{% set version = "2.3.1" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7f7722c086569805a05c5e2f3bbbb5cd0c9c85218a080dc62864834660962302
+  sha256: c708834c5b6ca8e2ff333d0519d37f64ae482d728c419737144e2f89c389ab99
 
 build:
   noarch: python
