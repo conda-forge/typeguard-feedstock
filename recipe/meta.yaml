@@ -1,5 +1,5 @@
 {% set name = "typeguard" %}
-{% set version = "2.7.1" %}
+{% set version = "2.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2d545c71e9439c21bcd7c28f5f55b3606e6106f7031ab58375656a1aed483ef2
+  sha256: e2b74600517730dac2ddcb6884f217a434345f825ad27967d603b79230368772
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -31,7 +31,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Runtime type checker for Python'
+  summary: Runtime type checker for Python
   description: |
     This library provides runtime type checking for functions defined with argument type annotations.
   doc_url: https://github.com/agronholm/typeguard
