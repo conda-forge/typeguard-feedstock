@@ -5,9 +5,13 @@ Home: https://github.com/agronholm/typeguard
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/typeguard-feedstock/blob/master/LICENSE.txt)
 
 Summary: Runtime type checker for Python
+
+Development: https://github.com/agronholm/typeguard
+
+Documentation: https://github.com/agronholm/typeguard
 
 This library provides runtime type checking for functions defined with argument type annotations.
 
