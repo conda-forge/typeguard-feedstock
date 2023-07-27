@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -23,6 +23,8 @@ requirements:
     - python >=3.7
     - importlib_metadata >=3.6
     - typing_extensions >=4.4.0
+  run_constrained:
+    - pytest >=7
 
 test:
   imports:
