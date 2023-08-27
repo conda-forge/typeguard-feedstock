@@ -152,4 +152,5 @@ Feedstock Maintainers
 
 * [@agronholm](https://github.com/agronholm/)
 * [@itamarst](https://github.com/itamarst/)
+* [@jan-janssen](https://github.com/jan-janssen/)
 
