@@ -6,29 +6,32 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/typeguard-{{ version }}.tar.gz
   sha256: ea0a113bbc111bcffc90789ebb215625c963411f7096a7e9062d4e4630c155fd
 
 build:
   noarch: python
-  number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 2
 
 requirements:
   host:
     - python >=3.8
+    - setuptools >=64
+    - setuptools-scm >=6.4
     - pip
-    - setuptools_scm
   run:
     - python >=3.8
-    - importlib_metadata >=3.6
-    - typing_extensions >=4.7.0
-  run_constrained:
-    - pytest >=7
+    - importlib-metadata >=3.6
+    - typing-extensions >=4.7.0
 
 test:
   imports:
     - typeguard
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/agronholm/typeguard
