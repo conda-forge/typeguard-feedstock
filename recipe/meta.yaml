@@ -1,34 +1,41 @@
-{% set name = "typeguard" %}
 {% set version = "4.1.5" %}
+{% set min_python = "3.8" %}
+{% set min_typing_extensions = "4.7.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: typeguard
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/t/typeguard/typeguard-{{ version }}.tar.gz
   sha256: ea0a113bbc111bcffc90789ebb215625c963411f7096a7e9062d4e4630c155fd
 
 build:
   noarch: python
-  number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 2
+  script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
 
 requirements:
   host:
-    - python >=3.8
+    - python >={{ min_python }}
     - pip
     - setuptools_scm
   run:
-    - python >=3.8
     - importlib_metadata >=3.6
-    - typing_extensions >=4.7.0
+    - python >={{ min_python }}
+    - typing_extensions >={{ min_typing_extensions }}
   run_constrained:
     - pytest >=7
 
 test:
+  requires:
+    - pip
+    - python {{ min_python }}.*
+    - typing_extensions {{ min_typing_extensions }}.*
   imports:
     - typeguard
+  commands:
+    - pip check
 
 about:
   home: https://github.com/agronholm/typeguard
@@ -37,9 +44,9 @@ about:
   license_file: LICENSE
   summary: Runtime type checker for Python
   description: |
-    This library provides runtime type checking for functions defined with argument type annotations.
-  doc_url: https://github.com/agronholm/typeguard
-  dev_url: https://github.com/agronholm/typeguard
+    This library provides run-time type checking for functions defined with PEP
+    484 argument (and return) type annotations, and any arbitrary objects.
+  doc_url: https://typeguard.readthedocs.io
 
 extra:
   recipe-maintainers:
