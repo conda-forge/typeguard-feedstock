@@ -31,7 +31,7 @@ test:
   requires:
     - pip
     - python {{ min_python }}.*
-    - typing_extensions {{ typing_extensions }}.*
+    - typing_extensions {{ min_typing_extensions }}.*
   imports:
     - typeguard
   commands:
