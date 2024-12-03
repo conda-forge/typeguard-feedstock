@@ -6,29 +6,31 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0d22a89d00b453b47c49875f42b6601b961757541a2e1e0ef517b6e24213c21b
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=64
     - setuptools-scm >=6.4
     - pip
   run:
     - typing_extensions >=4.10.0
-    - python >=3.8
+    - python >={{ python_min }}
     - importlib-metadata >=3.6
     - typing-extensions >=4.10.0
   run_constrained:
     - pytest >=7
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - typeguard
 
